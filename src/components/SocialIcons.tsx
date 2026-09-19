@@ -60,27 +60,51 @@ const SocialIcons = () => {
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
-          <a href="https://github.com" target="_blank">
+          <a
+            href="https://github.com/dhruvpatel-php"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+          >
             <FaGithub />
           </a>
         </span>
         <span>
-          <a href="https://www.linkedin.com" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/dhruv-patel-328430230/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+          >
             <FaLinkedinIn />
           </a>
         </span>
         <span>
-          <a href="https://x.com" target="_blank">
+          <a
+            href="https://x.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="X"
+          >
             <FaXTwitter />
           </a>
         </span>
         <span>
-          <a href="https://www.instagram.com" target="_blank">
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instagram"
+          >
             <FaInstagram />
           </a>
         </span>
       </div>
-      <a className="resume-button" href="#">
+      <a
+        className="resume-button"
+        href="mailto:dhruvp12299@gmail.com?subject=Resume%20Request%20-%20Dhruv%20Patel"
+        title="Contact for Resume"
+      >
         <HoverLinks text="RESUME" />
         <span>
           <TbNotes />

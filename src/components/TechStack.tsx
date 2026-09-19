@@ -10,6 +10,7 @@ import {
   CylinderCollider,
   RapierRigidBody,
 } from "@react-three/rapier";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
@@ -21,13 +22,46 @@ const imageUrls = [
   "/images/mysql.webp",
   "/images/typescript.webp",
   "/images/javascript.webp",
+  "/images/sklearn.webp",
+  "/images/PHP.webp",
+  "/images/CI.webp",
+  "/images/cpanel.webp",
+  "/images/RESTful_APIs.webp",
+  "/images/Composer.webp",
+  "/images/Github.webp",
+  "/images/XAMPP.webp",
+  "/images/Linux.webp",
+  "/images/VS_Code.webp",
+  "/images/Apache.webp",
+  "/images/Power_BI.webp",
+  "/images/CSS.webp",
+  "/images/git.webp",
+  "/images/Google_colab.webp",
+  "/images/jupyter_notebook.webp",
+  "/images/Apache_spark.webp",
+  "/images/XGBoost.webp",
+  "/images/pytorch.webp",
+  "/images/Tensorflow.webp",
+  "/images/tableau.webp",
+  "/images/HTML.webp",
+  "/images/pandas.webp",
+  "/images/JQuery.webp",
+  "/images/Bootstrap.webp",
+  "/images/Flask.webp",
+  "/images/Python.webp",
+  "/images/Numpy.webp",
+  "/images/Seaborn.webp",
+  "/images/Matplotlib.webp",
+  "/images/pyspark.webp",
+
+
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
-const spheres = [...Array(30)].map(() => ({
-  scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
+const spheres = imageUrls.map((_, i) => ({
+  scale: [0.7, 1, 0.8, 1, 1][i % 5],
 }));
 
 type SphereProps = {
@@ -128,13 +162,21 @@ const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    ScrollTrigger.refresh();
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = document
-        .getElementById("work")!
-        .getBoundingClientRect().top;
-      setIsActive(scrollY > threshold);
+      const workSection = document.getElementById("work");
+
+      if (!workSection) return;
+
+      const workBottom =
+        workSection.getBoundingClientRect().bottom;
+
+      const viewportHeight = window.innerHeight;
+
+      setIsActive(workBottom < viewportHeight * 0.8);
     };
+    // handleScroll();
+
     document.querySelectorAll(".header a").forEach((elem) => {
       const element = elem as HTMLAnchorElement;
       element.addEventListener("click", () => {
@@ -193,7 +235,8 @@ const TechStack = () => {
             <SphereGeo
               key={i}
               {...props}
-              material={materials[Math.floor(Math.random() * materials.length)]}
+              // material={materials[Math.floor(Math.random() * materials.length)]}
+              material={materials[i]}
               isActive={isActive}
             />
           ))}

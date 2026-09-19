@@ -1,29 +1,48 @@
+
 import { useEffect, useRef } from "react";
 import "./styles/WhatIDo.css";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
+
   const setRef = (el: HTMLDivElement | null, index: number) => {
     containerRef.current[index] = el;
   };
+
+
   useEffect(() => {
-    if (ScrollTrigger.isTouch) {
+    const isMobile = window.innerWidth <= 900;
+
+    if (isMobile) {
       containerRef.current.forEach((container) => {
-        if (container) {
-          container.classList.remove("what-noTouch");
-          container.addEventListener("click", () => handleClick(container));
-        }
+        if (!container) return;
+
+        container.classList.remove("what-noTouch");
+
+        const clickHandler = () => handleClick(container);
+
+        container.addEventListener("click", clickHandler);
+
+        // Store handler so cleanup removes the SAME function
+        (container as any)._whatClickHandler = clickHandler;
       });
     }
+
     return () => {
       containerRef.current.forEach((container) => {
-        if (container) {
-          container.removeEventListener("click", () => handleClick(container));
+        if (!container) return;
+
+        const clickHandler = (container as any)._whatClickHandler;
+
+        if (clickHandler) {
+          container.removeEventListener("click", clickHandler);
+          delete (container as any)._whatClickHandler;
         }
       });
     };
   }, []);
+
   return (
     <div className="whatIDO">
       <div className="what-box">
@@ -34,6 +53,7 @@ const WhatIDo = () => {
           </div>
         </h2>
       </div>
+
       <div className="what-box">
         <div className="what-box-in">
           <div className="what-border2">
@@ -58,6 +78,8 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
+
+          {/* DATA SCIENCE */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 0)}
@@ -84,31 +106,44 @@ const WhatIDo = () => {
                 />
               </svg>
             </div>
+
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>DEVELOP</h3>
+              <h3>DATA SCIENCE & AI/ML</h3>
+
               <h4>Description</h4>
+
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                Working with data to explore patterns, build predictive models,
+                and solve practical problems using Python, data analysis, and
+                machine learning techniques.
               </p>
+
               <h5>Skillset & tools</h5>
+
               <div className="what-content-flex">
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">Pandas & NumPy</div>
+                <div className="what-tags">Scikit-Learn</div>
+                <div className="what-tags">Data Preprocessing</div>
+                <div className="what-tags">Feature Engineering</div>
+                <div className="what-tags">EDA & Visualization</div>
+                <div className="what-tags">Regression</div>
+                <div className="what-tags">Classification</div>
+                <div className="what-tags">Clustering</div>
+                <div className="what-tags">NLP</div>
+                <div className="what-tags">Time Series</div>
+                <div className="what-tags">Matplotlib & Seaborn</div>
+                <div className="what-tags">Jupyter Notebook</div>
+                <div className="what-tags">Google Colab</div>
               </div>
+
               <div className="what-arrow"></div>
             </div>
           </div>
+
+          {/* SOFTWARE ENGINEERING */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 1)}
@@ -126,25 +161,37 @@ const WhatIDo = () => {
                 />
               </svg>
             </div>
+
             <div className="what-corner"></div>
+
             <div className="what-content-in">
-              <h3>DESIGN</h3>
+              <h3>SOFTWARE ENGINEERING & BACKEND</h3>
+
               <h4>Description</h4>
+
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                Building web applications and backend solutions with a focus on
+                APIs, databases, authentication, business logic, and
+                maintainable software.
               </p>
+
               <h5>Skillset & tools</h5>
+
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
+                <div className="what-tags">PHP</div>
+                <div className="what-tags">CodeIgniter</div>
+                <div className="what-tags">MySQL</div>
+                <div className="what-tags">REST APIs</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">JavaScript</div>
+                <div className="what-tags">MVC & OOP</div>
+                <div className="what-tags">Laravel</div>
+                <div className="what-tags">Flask</div>
+                <div className="what-tags">Postman</div>
+                <div className="what-tags">Git & GitHub</div>
+                <div className="what-tags">Bootstrap</div>
               </div>
+
               <div className="what-arrow"></div>
             </div>
           </div>
@@ -157,16 +204,28 @@ const WhatIDo = () => {
 export default WhatIDo;
 
 function handleClick(container: HTMLDivElement) {
-  container.classList.toggle("what-content-active");
-  container.classList.remove("what-sibling");
-  if (container.parentElement) {
-    const siblings = Array.from(container.parentElement.children);
+  const isActive = container.classList.contains("what-content-active");
 
-    siblings.forEach((sibling) => {
-      if (sibling !== container) {
-        sibling.classList.remove("what-content-active");
-        sibling.classList.toggle("what-sibling");
+  if (!container.parentElement) return;
+
+  const cards = Array.from(
+    container.parentElement.querySelectorAll(".what-content")
+  ) as HTMLDivElement[];
+
+  cards.forEach((card) => {
+    card.classList.remove("what-content-active");
+    card.classList.remove("what-sibling");
+  });
+
+  if (!isActive) {
+    container.classList.add("what-content-active");
+
+    cards.forEach((card) => {
+      if (card !== container) {
+        card.classList.add("what-sibling");
       }
     });
   }
 }
+
+
