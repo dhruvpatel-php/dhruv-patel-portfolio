@@ -11,6 +11,7 @@
   width: 100%;
 }
 
+.contact-section h2.contact-title,
 .contact-section h3 {
   font-size: 60px;
   font-weight: 400;
@@ -86,6 +87,7 @@ a.contact-social:hover svg {
   transform: translate(3px, -3px);
 }
 
+.contact-box .contact-credit,
 .contact-box h2 {
   font-weight: 400;
   font-size: 23px;
@@ -93,6 +95,7 @@ a.contact-social:hover svg {
   margin: 0;
 }
 
+.contact-box .contact-credit > span,
 .contact-box h2 > span {
   color: var(--accentColor);
 }
@@ -110,10 +113,12 @@ a.contact-social:hover svg {
 }
 
 @media only screen and (max-width: 1600px) {
+  .contact-section h2.contact-title,
   .contact-section h3 {
     font-size: 50px;
     margin-bottom: 40px;
   }
+  .contact-box .contact-credit,
   .contact-box h2 {
     font-size: 20px;
   }
@@ -123,9 +128,11 @@ a.contact-social:hover svg {
 }
 
 @media only screen and (max-width: 1300px) {
+  .contact-section h2.contact-title,
   .contact-section h3 {
     font-size: 40px;
   }
+  .contact-box .contact-credit,
   .contact-box h2 {
     font-size: 18px;
   }

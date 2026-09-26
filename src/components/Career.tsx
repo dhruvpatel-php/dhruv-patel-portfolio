@@ -15,10 +15,10 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>B.Tech in CSE</h4>
-                <h5>Rai University,Ahmedabad</h5>
+                <h3>B.Tech in CSE</h3>
+                <h5>Rai University, Ahmedabad</h5>
               </div>
-              <h3>2016</h3>
+              <span className="career-year">2016</span>
             </div>
             <p>
               Earned a Bachelor of Technology in Computer Science & Engineering.
@@ -29,10 +29,10 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Backend Developer</h4>
+                <h3>Backend Developer</h3>
                 <h5>Fruxinfo Pvt. Ltd.</h5>
               </div>
-              <h3>2020</h3>
+              <span className="career-year">2020</span>
             </div>
             <p>
               Developed ERP and e-commerce platforms using PHP, MySQL, and REST
@@ -43,10 +43,10 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Software Engineer</h4>
+                <h3>Software Engineer</h3>
                 <h5>INNsight Interactive</h5>
               </div>
-              <h3>2021</h3>
+              <span className="career-year">2021</span>
             </div>
             <p>
               Engineered backend modules and enterprise web applications with
@@ -58,11 +58,11 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Personal Projects & Freelancing</h4>
+                <h3>Personal Projects & Freelancing</h3>
                 <h5>Independent Development</h5>
               </div>
 
-              <h3>2022</h3>
+              <span className="career-year">2022</span>
             </div>
 
             <p>
@@ -76,10 +76,10 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Data Science & AI</h4>
+                <h3>Data Science & AI</h3>
                 <h5>DataMites | Training</h5>
               </div>
-              <h3>NOW</h3>
+              <span className="career-year">NOW</span>
             </div>
             <p>
               Completed comprehensive Python Data Science & ML training. Built

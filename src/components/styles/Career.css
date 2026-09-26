@@ -54,13 +54,14 @@
   justify-content: space-between;
   gap: 50px;
 }
-.career-info h3 {
+.career-info .career-year {
   font-size: 48px;
   margin: 0;
   font-weight: 500;
   line-height: 45px;
 }
 
+.career-info h3,
 .career-info h4 {
   font-size: 33px;
   line-height: 30px;
@@ -137,6 +138,7 @@
     font-size: 50px;
     line-height: 50px;
   }
+  .career-info h3,
   .career-info h4 {
     font-size: 22px;
     line-height: 24px;
@@ -145,7 +147,7 @@
   .career-info h5 {
     font-size: 17px;
   }
-  .career-info h3 {
+  .career-info .career-year {
     font-size: 40px;
   }
   .career-info-box p {
@@ -200,7 +202,7 @@
   .career-info-in {
     gap: 0px;
   }
-  .career-info h3 {
+  .career-info .career-year {
     font-size: 33px;
   }
   .career-info-in,

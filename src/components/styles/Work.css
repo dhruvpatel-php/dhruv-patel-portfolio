@@ -96,7 +96,8 @@
 }
 
 
-.work-title h3 {
+.work-title h3,
+.work-title .work-num {
   font-size: 40px;
   line-height: 1;
   margin: 0;
@@ -106,7 +107,8 @@
   flex-shrink: 0;
 }
 
-.work-title h4 {
+.work-title h4,
+.work-title .work-name {
   font-size: 19px;
   font-weight: 600;
   margin: 0;
@@ -133,7 +135,8 @@
   gap: 10px;
 }
 
-.work-detail-item h5 {
+.work-detail-item h5,
+.work-detail-item h4 {
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -145,7 +148,8 @@
   gap: 6px;
 }
 
-.work-detail-item h5::before {
+.work-detail-item h5::before,
+.work-detail-item h4::before {
   content: "";
   display: inline-block;
   width: 5px;
@@ -258,11 +262,13 @@
     gap: 16px;
   }
 
-  .work-title h3 {
+  .work-title h3,
+  .work-title .work-num {
     font-size: 34px;
   }
 
-  .work-title h4 {
+  .work-title h4,
+  .work-title .work-name {
     font-size: 17px;
   }
 
@@ -287,11 +293,13 @@
     gap: 14px;
   }
 
-  .work-title h3 {
+  .work-title h3,
+  .work-title .work-num {
     font-size: 30px;
   }
 
-  .work-title h4 {
+  .work-title h4,
+  .work-title .work-name {
     font-size: 16px;
   }
 
@@ -321,7 +329,8 @@
     max-height: 160px;
   }
 
-  .work-title h3 {
+  .work-title h3,
+  .work-title .work-num {
     font-size: 32px;
   }
 }
@@ -346,7 +355,8 @@
     margin-bottom: 6px;
   }
 
-  .work-title h4 {
+  .work-title h4,
+  .work-title .work-name {
     font-size: 15px;
   }
 
@@ -396,7 +406,8 @@
     align-items: flex-start;
   }
 
-  .work-title h3 {
+  .work-title h3,
+  .work-title .work-num {
     font-size: 26px;
     flex-shrink: 0;
   }
@@ -408,7 +419,8 @@
     overflow: visible;
   }
 
-  .work-title h4 {
+  .work-title h4,
+  .work-title .work-name {
     font-size: 15px;
     line-height: 1.25;
     white-space: normal;

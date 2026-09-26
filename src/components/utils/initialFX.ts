@@ -15,7 +15,7 @@ export function initialFX() {
   });
 
   var landingText = new SplitText(
-    [".landing-info h3", ".landing-intro h2", ".landing-intro h1"],
+    [".landing-info h3", ".landing-intro h2", ".landing-h1-name"],
     {
       type: "chars,lines",
       linesClass: "split-line",

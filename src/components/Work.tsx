@@ -217,22 +217,22 @@ const Work = () => {
             <div className="work-box" key={project.num}>
               <div className="work-info">
                 <div className="work-title">
-                  <h3>{project.num}</h3>
+                  <span className="work-num">{project.num}</span>
 
                   <div>
-                    <h4>{project.name}</h4>
+                    <h3 className="work-name">{project.name}</h3>
                     <p>{project.category}</p>
                   </div>
                 </div>
 
                 <div className="work-detail-section">
                   <div className="work-detail-item">
-                    <h5>Key Focus</h5>
+                    <h4>Key Focus</h4>
                     <p>{project.overview}</p>
                   </div>
 
                   <div className="work-detail-item">
-                    <h5>Tools & Techniques</h5>
+                    <h4>Tools & Techniques</h4>
 
                     <div className="work-tool-tags">
                       {project.tools.map((tool, index) => (
@@ -247,7 +247,7 @@ const Work = () => {
 
               <WorkImage
                 image={project.image}
-                alt={project.name}
+                alt={`${project.name} - ${project.category} Project by Dhruv Patel`}
                 link={project.link}
               />
             </div>

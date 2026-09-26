@@ -4,10 +4,10 @@ const About = () => {
   return (
     <div className="about-section" id="about">
       <div className="about-me">
-        <h3 className="title">About Me</h3>
+        <h2 className="title">About Me</h2>
 
         <p className="para">
-          Software Engineer with professional experience in backend and web
+          Software Engineer based in Ahmedabad with professional experience in backend and web
           application development, now building a career in Data Science and
           Machine Learning. My software engineering background gives me a
           strong foundation in programming, databases, APIs, and
