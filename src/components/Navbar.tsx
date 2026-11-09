@@ -37,6 +37,16 @@ const Navbar = () => {
         }
       });
     });
+
+    let logo = document.querySelector(".navbar-title");
+    if (logo) {
+      logo.addEventListener("click", (e) => {
+        if (window.innerWidth > 1024) {
+          e.preventDefault();
+          smoother.scrollTo(0, true);
+        }
+      });
+    }
     window.addEventListener("resize", () => {
       ScrollSmoother.refresh(true);
     });
@@ -44,8 +54,19 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
-          DP
+        <a
+          href="/#"
+          className="navbar-title"
+          data-cursor="disable"
+          aria-label="Dhruv Patel - Home"
+        >
+          <img
+            src="/assets/logo.svg"
+            alt="Dhruv Patel logo"
+            className="navbar-logo"
+            width="36"
+            height="36"
+          />
         </a>
         <a
           href="mailto:dhruvp12299@gmail.com"

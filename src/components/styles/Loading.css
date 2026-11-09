@@ -194,9 +194,18 @@
   color: var(--backgroundColor);
 }
 .loader-title {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 0;
+}
+.loader-logo {
+  height: 32px;
+  width: 32px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(127, 64, 255, 0.25));
 }
 @keyframes blink {
   0% {
@@ -349,15 +358,17 @@
   .loading-header {
     padding: 20px 0px;
   }
-  .loader-title {
-    font-size: 16px;
+  .loader-logo {
+    height: 36px;
+    width: 36px;
   }
 }
 @media only screen and (min-width: 1200px) {
   .loading-header {
     padding: 35px 0px;
   }
-  .loader-title {
-    font-size: 18px;
+  .loader-logo {
+    height: 40px;
+    width: 40px;
   }
 }
