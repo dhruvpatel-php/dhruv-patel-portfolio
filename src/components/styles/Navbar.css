@@ -20,7 +20,7 @@
   padding: 0;
   list-style: none;
   column-gap: 40px;
-  row-gap: 8px;
+  row-gap: 0;
   align-items: end;
 }
 .header ul li {
@@ -29,6 +29,13 @@
   color: #ccc;
   font-weight: 600;
   cursor: pointer;
+}
+.header ul li a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+  box-sizing: border-box;
 }
 .navbar-connect {
   position: absolute;
@@ -47,6 +54,8 @@
   text-decoration: none;
   line-height: 0;
   transition: transform 0.3s ease, filter 0.3s ease;
+  min-width: 44px;
+  min-height: 44px;
 }
 .navbar-title:hover {
   transform: scale(1.06);
@@ -66,9 +75,14 @@
     flex-direction: row;
     align-items: center;
     font-size: 14px;
+    row-gap: 8px;
   }
   .header ul li {
     color: #eae5ec;
+  }
+  .header ul li a {
+    min-height: unset;
+    padding: 0;
   }
   .navbar-logo {
     height: 36px;

@@ -38,7 +38,7 @@ const Navbar = () => {
       });
     });
 
-    let logo = document.querySelector(".navbar-title");
+    const logo = document.querySelector(".navbar-title");
     if (logo) {
       logo.addEventListener("click", (e) => {
         if (window.innerWidth > 1024) {

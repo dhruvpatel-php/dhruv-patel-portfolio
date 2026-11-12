@@ -31,7 +31,7 @@ const projects: Project[] = [
     ],
     overview:
       "Built a machine learning workflow to analyze vehicle attributes and predict used-car selling prices. Applied data preprocessing, exploratory analysis, feature preparation, model training, and evaluation.",
-    image: "/images/car_price_ml.jpg",
+    image: "/images/car_price_ml.webp",
     link: "https://github.com/dhruvpatel-php",
   },
   {
@@ -47,7 +47,7 @@ const projects: Project[] = [
     ],
     overview:
       "Developed a classification workflow for loan approval prediction, including data cleaning, categorical feature handling, preprocessing, feature transformation, model training, and evaluation.",
-    image: "/images/loan_pipeline.jpg",
+    image: "/images/loan_pipeline.webp",
     link: "https://github.com/dhruvpatel-php",
   },
   {
@@ -64,7 +64,7 @@ const projects: Project[] = [
     ],
     overview:
       "Built an NLP classification workflow to analyze movie review sentiment. Applied text preprocessing, tokenization, TF-IDF vectorization, and machine learning classification to identify positive and negative sentiment.",
-    image: "/images/movie_sentiment.jpg",
+    image: "/images/movie_sentiment.webp",
     link: "https://github.com/dhruvpatel-php",
   },
   {
@@ -80,7 +80,7 @@ const projects: Project[] = [
     ],
     overview:
       "Analyzed historical passenger data to understand trends, seasonality, and stationarity before applying ARIMA-based time-series forecasting.",
-    image: "/images/air_passengers.jpg",
+    image: "/images/air_passengers.webp",
     link: "https://github.com/dhruvpatel-php",
   },
   {
@@ -96,7 +96,7 @@ const projects: Project[] = [
     ],
     overview:
       "Explored employee data to identify patterns associated with attrition and built a Decision Tree classification model to predict employee turnover.",
-    image: "/images/hr_attrition.jpg",
+    image: "/images/hr_attrition.webp",
     link: "https://github.com/dhruvpatel-php",
   },
   {
@@ -112,7 +112,7 @@ const projects: Project[] = [
     ],
     overview:
       "Performed exploratory data analysis to understand the relationship between advertising expenditure and sales, then applied linear regression to build a predictive model.",
-    image: "/images/sales_advertising.jpg",
+    image: "/images/sales_advertising.webp",
     link: "https://github.com/dhruvpatel-php",
   },
   {
@@ -133,7 +133,7 @@ const projects: Project[] = [
     overview:
       "Developed an enterprise ERP system with modules for inventory, billing, reporting, and role-based access control, implementing database-driven workflows and backend business logic.",
 
-    image: "/images/ERP.png",
+    image: "/images/ERP.webp",
 
     link: "https://github.com/dhruvpatel-php",
   },
@@ -155,7 +155,7 @@ const projects: Project[] = [
     overview:
       "Developed warehouse and inventory workflows for stock tracking and e-invoicing, integrating database operations and real-time business processes for efficient inventory management.",
 
-    image: "/images/Warehouse.png",
+    image: "/images/Warehouse.webp",
 
     link: "https://github.com/dhruvpatel-php",
   },

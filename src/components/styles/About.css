@@ -61,8 +61,8 @@
     width: 55%;
   }
   .about-me p {
-    font-size: 1.2vw;
-    line-height: 1.75vw;
+    font-size: clamp(15px, 1.2vw, 24px);
+    line-height: clamp(23px, 1.75vw, 34px);
   }
 }
 @media only screen and (min-width: 1950px) {
