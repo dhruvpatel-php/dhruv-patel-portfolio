@@ -435,3 +435,16 @@ h2.landing-info-h2 {
     font-size: 30px;
   }
 }
+
+/* HERO INTRO - always start below the fixed navbar/logo on phones & small tablets */
+@media only screen and (max-width: 1024px) {
+  .landing-intro {
+    top: max(12%, 88px);
+  }
+}
+/* landscape phones: short screens, header row is ~56-64px tall */
+@media only screen and (max-width: 1024px) and (max-height: 500px) {
+  .landing-intro {
+    top: 76px;
+  }
+}

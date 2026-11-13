@@ -110,3 +110,16 @@
     width: 40px;
   }
 }
+
+/* NAVBAR - MOBILE: pin logo to the top-left, don't center it against the stacked links */
+@media only screen and (max-width: 499px) {
+  .navbar-title {
+    align-self: flex-start;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .header ul {
+    row-gap: 0; /* links already have 44px tap targets */
+  }
+}
+
