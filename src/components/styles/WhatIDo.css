@@ -602,3 +602,52 @@
     font-size: 25px;
   }
 }
+
+/* WHAT I DO - MOBILE FIX: cards size to their content so tags are never clipped */
+@media only screen and (max-width: 900px) {
+  .whatIDO { height: auto; }
+  .what-box:last-child { height: auto; }
+
+  .what-box-in {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .what-content,
+  .what-content-active,
+  .what-content.what-sibling {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding: 20px 30px 56px; /* bottom room so the arrow never overlaps text */
+  }
+  .what-content-active { padding-top: 25px; }
+
+  .what-content-in {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  /* collapsed cards: only title + "Description" label */
+  .what-content:not(.what-content-active) .what-content-in p,
+  .what-content:not(.what-content-active) .what-content-in h5,
+  .what-content:not(.what-content-active) .what-content-flex {
+    display: none;
+  }
+
+  /* active card: show everything */
+  .what-content-active .what-content-in p { display: block; }
+  .what-content-active .what-content-in h5 { display: block; opacity: 1; margin-top: 16px; }
+  .what-content-active .what-content-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    opacity: 1;
+  }
+
+  /* dashed borders follow the real card size */
+  .what-border1 svg { width: 100%; }
+  .what-border2 svg { height: 100%; }
+}
