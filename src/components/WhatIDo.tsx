@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from "react";
 import "./styles/WhatIDo.css";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -203,6 +203,8 @@ const WhatIDo = () => {
 
 export default WhatIDo;
 
+let refreshTimeout: ReturnType<typeof setTimeout> | undefined;
+
 function handleClick(container: HTMLDivElement) {
   const isActive = container.classList.contains("what-content-active");
 
@@ -226,6 +228,13 @@ function handleClick(container: HTMLDivElement) {
       }
     });
   }
+
+  if (refreshTimeout) {
+    clearTimeout(refreshTimeout);
+  }
+  refreshTimeout = setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 600);
 }
 
 

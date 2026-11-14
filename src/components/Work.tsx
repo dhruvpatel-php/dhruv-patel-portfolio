@@ -163,45 +163,60 @@ const projects: Project[] = [
 
 const Work = () => {
   useGSAP(() => {
-    function getTranslateX() {
-      const workFlex = document.querySelector(".work-flex") as HTMLElement | null;
-      const workContainer = document.querySelector(".work-container") as HTMLElement | null;
-      const boxes = document.getElementsByClassName("work-box");
+    const mm = gsap.matchMedia();
 
-      if (!workFlex || !workContainer || boxes.length === 0) return 0;
+    mm.add("(min-width: 1025px)", () => {
+      function getTranslateX() {
+        const workFlex = document.querySelector(".work-flex") as HTMLElement | null;
+        const workContainer = document.querySelector(".work-container") as HTMLElement | null;
+        const boxes = document.getElementsByClassName("work-box");
 
-      const lastBox = boxes[boxes.length - 1] as HTMLElement;
-      const totalWidth = workFlex.offsetLeft + lastBox.offsetLeft + lastBox.offsetWidth;
-      const visibleWidth = workContainer.offsetWidth;
+        if (!workFlex || !workContainer || boxes.length === 0) return 0;
 
-      // Ensure last project box scrolls fully into view with generous right clearance
-      const distance = totalWidth - visibleWidth + 100;
+        const lastBox = boxes[boxes.length - 1] as HTMLElement;
+        const totalWidth = workFlex.offsetLeft + lastBox.offsetLeft + lastBox.offsetWidth;
+        const visibleWidth = workContainer.offsetWidth;
 
-      return Math.max(0, distance);
-    }
+        // Ensure last project box scrolls fully into view with generous right clearance
+        const distance = totalWidth - visibleWidth + 100;
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".work-section",
-        start: "top top",
-        end: () => `+=${getTranslateX()}`,
-        scrub: true,
-        pin: true,
-        pinType: !ScrollTrigger.isTouch ? "transform" : "fixed",
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        id: "work",
-      },
+        return Math.max(0, distance);
+      }
+
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".work-section",
+          start: "top top",
+          end: () => `+=${getTranslateX()}`,
+          scrub: true,
+          pin: true,
+          pinType: !ScrollTrigger.isTouch ? "transform" : "fixed",
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          id: "work",
+        },
+      });
+
+      timeline.to(".work-flex", {
+        x: () => -getTranslateX(),
+        ease: "none",
+      });
+
+      return () => {
+        timeline.kill();
+        ScrollTrigger.getById("work")?.kill();
+      };
     });
 
-    timeline.to(".work-flex", {
-      x: () => -getTranslateX(),
-      ease: "none",
+    mm.add("(max-width: 1024px)", () => {
+      gsap.set(".work-flex", { clearProps: "all" });
+      return () => {
+        gsap.set(".work-flex", { clearProps: "all" });
+      };
     });
 
     return () => {
-      timeline.kill();
-      ScrollTrigger.getById("work")?.kill();
+      mm.revert();
     };
   }, []);
 
@@ -211,6 +226,7 @@ const Work = () => {
         <h2>
           My <span>Work</span>
         </h2>
+        <div className="work-swipe-hint">Swipe →</div>
 
         <div className="work-flex">
           {projects.map((project) => (

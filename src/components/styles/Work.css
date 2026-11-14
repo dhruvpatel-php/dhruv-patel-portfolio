@@ -526,3 +526,70 @@
     padding-right: 40px;
   }
 }
+
+/* WORK - MOBILE: native horizontal swipe strip, no pin, no 100vh */
+.work-swipe-hint {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .work-swipe-hint {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accentColor);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-top: -4px;
+    margin-bottom: 16px;
+    opacity: 0.9;
+  }
+
+  .work-section {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding: 32px 0;
+    will-change: auto;
+  }
+
+  .work-container {
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .work-flex {
+    height: auto;
+    margin-left: 0;
+    padding: 0 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    align-items: stretch;
+    border-top: 1px solid #363636;
+    border-bottom: 1px solid #363636;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .work-flex::-webkit-scrollbar {
+    display: none;
+  }
+
+  .work-flex::before,
+  .work-flex::after {
+    display: none;
+  }
+
+  .work-box {
+    scroll-snap-align: start;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .work-flex .work-box:last-child {
+    margin-right: 15px;
+  }
+}
